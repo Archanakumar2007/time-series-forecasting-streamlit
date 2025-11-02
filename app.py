@@ -26,7 +26,7 @@ def load_dataframe(uploaded_file):
             # try to normalize column names (your loader capitalizes)
             df.columns = [c.strip().capitalize() for c in df.columns]
             if 'Date' in df.columns and 'Sales' in df.columns:
-                df['Date'] = pd.to_datetime(df['Date'])
+                df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
                 df.set_index('Date', inplace=True)
                 df = df.asfreq('MS', method='ffill')
                 return df
