@@ -1,3 +1,6 @@
+streamlit
 pandas
-statsmodels
 numpy
+matplotlib
+scikit-learn
+statsmodels
